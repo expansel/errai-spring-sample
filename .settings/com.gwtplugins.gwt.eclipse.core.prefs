@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+entryPointModules=com.expansel.errai.spring.sample.gwt.App
+gwtSyncCodeServer=true
