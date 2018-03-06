@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 /**
  * <p>This intercepts security exceptions from Spring controllers and writes a json 
- * response to the client side that errai understands. Currently controllers 
+ * response to the client side that errai rest clients understand. Currently controllers 
  * don't support @RestrictedAccess so security exceptions are likely to be 
  * AccessDeniedException, unless errai security exceptions are manually thrown.</p>
  * 
@@ -34,7 +34,6 @@ public class GlobalResponseEntityExceptionHandler extends ResponseEntityExceptio
 
     @ExceptionHandler(value = { AccessDeniedException.class, UnauthenticatedException.class, UnauthorizedException.class })
     protected ResponseEntity<Object> handle(RuntimeException ex, WebRequest request) {
-        ex.printStackTrace();
         if(ex instanceof AccessDeniedException) {
             ex = new UnauthorizedException();
         } 

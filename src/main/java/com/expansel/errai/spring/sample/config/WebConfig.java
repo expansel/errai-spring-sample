@@ -28,10 +28,6 @@ import com.expansel.errai.spring.sample.controller.HelloWorldController;
 @EnableWebMvc
 @Import({WebSecurityConfig.class, MethodSecurityConfig.class})
 //@EnableAspectJAutoProxy // need this for @RestrictedAccess on Controllers, not recommended
-//@EnableGlobalMethodSecurity(
-//        prePostEnabled = true, 
-//        securedEnabled = true, // Currently there is no simple way to configure the RoleVoter to not need  
-//        jsr250Enabled = true)
 public class WebConfig implements WebMvcConfigurer {
     private static final Logger logger = LoggerFactory.getLogger(WebConfig.class);
     

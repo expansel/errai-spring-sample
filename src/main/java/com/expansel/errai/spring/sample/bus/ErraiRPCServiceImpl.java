@@ -7,9 +7,9 @@ import org.jboss.errai.security.shared.api.annotation.RestrictedAccess;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.expansel.errai.spring.sample.config.SpringService;
 import com.expansel.errai.spring.sample.gwt.shared.ErraiRPCService;
 import com.expansel.errai.spring.sample.gwt.shared.RPCResult;
+import com.expansel.errai.spring.sample.service.SpringService;
 
 @Service
 public class ErraiRPCServiceImpl implements ErraiRPCService {

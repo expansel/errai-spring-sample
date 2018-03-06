@@ -15,6 +15,7 @@ import org.springframework.web.context.annotation.SessionScope;
 import com.expansel.errai.spring.sample.bus.ErraiCommandService;
 import com.expansel.errai.spring.sample.bus.ErraiMessageCallbackService;
 import com.expansel.errai.spring.sample.bus.ErraiRPCServiceImpl;
+import com.expansel.errai.spring.sample.service.SpringService;
 import com.expansel.errai.spring.server.ErraiApplicationListener;
 import com.expansel.errai.spring.server.ErraiRequestDispatcherFactoryBean;
 import com.expansel.errai.spring.server.ErraiServerMessageBusFactoryBean;

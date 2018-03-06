@@ -1,4 +1,4 @@
-package com.expansel.errai.spring.sample.config;
+package com.expansel.errai.spring.sample.service;
 
 import org.jboss.errai.bus.server.api.ServerMessageBus;
 import org.slf4j.Logger;

@@ -30,12 +30,6 @@ public class DemoSecurityExceptionHandler implements SecurityExceptionHandler {
 
     @Inject
     private ClientMessageBus bus;
-
-//    @Inject
-//    public DemoSecurityExceptionHandler(SecurityContext context, MessageBus bus) {
-//      this.context = context;
-//      this.bus = bus;
-//    }
     
     @Override
     public boolean handleException(Throwable throwable) {
