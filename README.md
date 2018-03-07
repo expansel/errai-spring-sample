@@ -4,13 +4,14 @@ This is a sample project to illustrate integrating Errai with Spring in a non-sp
 
 The main point of interest is the code, but the user interface can help seeing the flow of a specific piece of functionality.
 
+In addition to the default in memory users used for testing purposes the application now also supports user management via Keycloak (<http://www.keycloak.org/>). The keycloak integration uses Spring profile support to conditionally enable that configuration. Further details down below.
+
 ## Compiling and running
 Make sure nothing else is running on port 8765.
 
 ```shell
 mvn clean package tomcat7:run
 ```
-
 ## Login to UI
 After compiling and running, the web application will can be accessed at this url: <http://localhost:8765/errai-spring-sample/login>
 
@@ -71,6 +72,22 @@ service class wired in by Spring to a MessageBus service.
 *  A custom SecurityExceptionHandler (this is a new feature in Errai) was implemented to avoid Errai Navigation and rather just
    display popup alerts to show what exceptions are being processed on the client side.
 
+## Keycloak
+The keycloak integration can be enabled via command line arguments:
+
+```shell
+mvn -Dspring.profiles.active=keycloak -Dkeycloak.configurationFile=file:/path/to/keycloak.json clean package tomcat7:run
+```
+Note there is a default keycloak.json file in WEB-INF, but you'd have to run keycloak on the same url and port with the same realmn setup.
+
+In keycloak you need the following:
+* a realm 
+* a client with redirect url pointing to the sample app: http://localhost:8765/errai-spring-sample/*
+* a realm level role called 'admin'
+* a user assigned the admin role
+* a user without the admin role
+
+Then you need to download the keycloak.json file from the Installation tab, and point maven to it with the keyclaok.configurationFile system property. Note you MUST have the "file:" prefix to reference the file in the file system, otherwise it is relative to the webapp. See the `org.keycloak.adapters.springsecurity.configKeycloakWebSecurityConfigurerAdapter class`.
 
 ## Missing and TODO:
 *  @RestrictedAccess on Spring controller classes. I don't recommend doing this but there is some commented code that reference how 
