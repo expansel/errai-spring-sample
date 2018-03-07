@@ -61,6 +61,11 @@
       </exclusions>
     </dependency>
     <dependency>
+        <groupId>org.keycloak</groupId>
+        <artifactId>keycloak-spring-security-adapter</artifactId>
+        <version>3.1.0.Final</version>
+    </dependency>
+    <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
     </dependency>
@@ -209,6 +214,12 @@
           <groupId>org.slf4j</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson.version}</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.slf4j</groupId>

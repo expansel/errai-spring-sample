@@ -15,7 +15,11 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>com.expansel.errai.spring.sample.config.AppConfig</param-value>
   </context-param>
-  
+  <!--  Can enable the keycloak profile from here or from a system property -->
+  <!-- context-param>
+      <param-name>spring.profiles.active</param-name>
+      <param-value>keycloak</param-value>
+  </context-param-->  
   
   <listener>
      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

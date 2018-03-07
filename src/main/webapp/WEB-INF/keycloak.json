@@ -1,0 +1,7 @@
+{
+  "realm": "admin",
+  "auth-server-url": "http://localhost:9080/auth",
+  "ssl-required": "external",
+  "resource": "errai-spring-sample",
+  "public-client": true
+}

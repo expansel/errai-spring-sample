@@ -22,21 +22,22 @@ import com.expansel.errai.spring.server.ErraiServerMessageBusFactoryBean;
 import com.expansel.errai.springsecurity.server.SpringSecurityMessageCallbackWrapper;
 
 /**
- * Configured in web.xml with contextConfigLocation.
+ * <p>Configured in web.xml with contextConfigLocation.
  * 
- * Note we're putting the Errai bus services in the root web app context 
+ * <p>Note we're putting the Errai bus services in the root web app context 
  * because WebConfig is meant for Dispatcher servlet isolated beans.
  * 
- * There is an option to make the bus fall under the DispatcherServlet but
+ * <p>There is an option to make the bus fall under the DispatcherServlet but
  * have not tried this. Spring has a class called ServletWrappingController 
  * for this purposes. Then bus services would probably better fall under the 
  * specific dispatcher servlet it is registered with. 
  *
+ * <p>For keycloak support see {@link KeycloakWebSecurityConfig}.
  *
  * @author Zach Visagie
  */
 @Configuration
-@Import({WebSecurityConfig.class, MethodSecurityConfig.class})
+@Import({WebSecurityConfig.class, KeycloakWebSecurityConfig.class, MethodSecurityConfig.class})
 @EnableAspectJAutoProxy // need this for @RestrictedAccess on MessageBus, annotation applies to local context only
 public class AppConfig {
     private static final Logger logger = LoggerFactory.getLogger(AppConfig.class);
