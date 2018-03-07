@@ -78,7 +78,7 @@ The keycloak integration can be enabled via command line arguments:
 ```shell
 mvn -Dspring.profiles.active=keycloak -Dkeycloak.configurationFile=file:/path/to/keycloak.json clean package tomcat7:run
 ```
-Note there is a default keycloak.json file in WEB-INF, but you'd have to run keycloak on the same url and port with the same realmn setup.
+Note there is a default keycloak.json file in WEB-INF, but you'd have to run keycloak on the same url and port with the same realm setup.
 
 In keycloak you need the following:
 * a realm 
@@ -87,7 +87,7 @@ In keycloak you need the following:
 * a user assigned the admin role
 * a user without the admin role
 
-Then you need to download the keycloak.json file from the Installation tab, and point maven to it with the keyclaok.configurationFile system property. Note you MUST have the "file:" prefix to reference the file in the file system, otherwise it is relative to the webapp. See the `org.keycloak.adapters.springsecurity.configKeycloakWebSecurityConfigurerAdapter class`.
+Then you need to download the keycloak.json file from the Installation tab of the client configuration, and point maven to it with the keycloak.configurationFile system property. Note you MUST have the "file:" prefix to reference the file in the file system, otherwise it is relative to the webapp. See the `org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter` class.
 
 ## Missing and TODO:
 *  @RestrictedAccess on Spring controller classes. I don't recommend doing this but there is some commented code that reference how 
